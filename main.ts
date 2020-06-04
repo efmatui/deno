@@ -2,13 +2,6 @@ import { Application } from "https://deno.land/x/oak/mod.ts"
 import { config } from "https://deno.land/x/dotenv/mod.ts"
 import router from "./routes.ts";
 import notFound from "./404.ts";
-import { MongoClient } from "https://deno.land/x/mongo@v0.7.0/mod.ts"
-
-const client = new MongoClient();
-
-const db = client.database('account');
-const users = db.collection('users');
-users.insertOne({name : "John Titer"});
 
 const env = config();
 const app = new Application();
